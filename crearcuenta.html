@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear-Cuenta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1 align="center">ArtemisStore-Crear cuenta</h1></header>
+    <form align="center" name="formularioDatos" id="formularioDatos" >
+        <label>Nombre: </label>
+        <input type="text" id="NomUser" name="nombre" placeholder="Ej: Emilia Alexandra Perez" required>
+        <br><br>
+        <label>Correo: </label>
+        <input type="email" id="CorreoUser" name="email" placeholder="Ej: AnnaPerez@gmail.com" required>
+        <br><br>
+        <label>Fecha de nacimiento: </label>
+        <input type="date" id="FechaNacimientoUser" required>
+        <br><br>
+        <label>Contraseña:</label>
+        <input type="password" name="password" id="PasswordUser" required>
+        <br><br>
+        <label>Confirmar contraseña:</label>
+        <input type="password" id="ConfPasswordUser" name="confirmarPassword" required>
+        <br><br>
+        <button type="submit">Enviar</button>
+        <br><br>
+        <button type="reset">Cancelar</button>
+    </form>
+    <p align="center">Ya tienes cuenta? <a href="inicio.html" target="_blank">Inicia sesion aqui</a></p><br>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const formulario = document.getElementById("formularioDatos");
+        formulario.addEventListener("submit", function(e) {
+        e.preventDefault();
+        let nombre = document.getElementById("NomUser").value;
+        let correo = document.getElementById("CorreoUser").value;
+        let password = document.getElementById("PasswordUser").value;
+        let confirmar = document.getElementById("ConfPasswordUser").value;
+    if (!(/^([A-Z][a-z]+)(\s[A-Z][a-z]+)*$/.test(nombre))) {
+        Swal.fire({
+            title: "Error",
+            text: "Su nombre debe empezar con mayusculas y el resto ser con minusculas :D",
+            icon: "error"
+        });
+        return;
+    }
+    if (!(/\S+@\S+\.\S+/.test(correo))) {
+        Swal.fire({
+            title: "Error",
+            text: "Correo electrónico incompleto",
+            icon: "error"
+        });
+        return;
+    }
+    if (password!==confirmar) {
+        Swal.fire({
+            title: "Error en confirmar la contraseña",
+            text: "Las contraseñas no coincide",
+            icon: "error"
+        });
+        return;
+    }
+    Swal.fire({
+        title: "¡Correcto!",
+        text: "Cuenta creada correctamente",
+        icon: "success"
+    }).then(() => {
+        formulario.submit();
+    });
+});
+    </script>
+</body>
+</html>

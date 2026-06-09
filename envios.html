@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 align="center">Artemis Store-Devoluciones</h1>
+        <h3 align="center">Las devoluciones deben hacerse 7 dias despues de recibido el envio</h3>
+        <h3 align="center">No se aceptan devoluciones de prendas en liquidacion</h3>
+    </header>
+    <form align="center" id="devolucion" method="POST" action="Cliente.php">
+        <label>Nombre de Usuario:</label>
+        <input type="text" id="nombreCliente" placeholder="Ej: Anna345">
+        <br><br>
+        <label>Correo: </label>
+        <input type="email" id="CorreoUser" placeholder="Ej: AnnaPerez@gmail.com">
+        <br><br>
+        <label>Numero de telefono:</label>
+        <input type="text" id="telefono" placeholder="Ej: 69385710">
+        <br><br>
+        <label>Direccion:</label>
+        <input type="text" id="direccion" placeholder="Ej: calle 34 Av.xxxxx">
+        <br><br>
+        <label>Motivo de la devolucion:</label>
+        <textarea id="comentario" placeholder="Escrib aqui el problema"></textarea>
+        <br><br>
+        <button type="submit">Enviar</button>
+        <br><br>
+        <button type="reset">Cancelar</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const formulario = document.getElementById("devolucion");
+        formulario.addEventListener("submit", function(e) {
+        e.preventDefault();
+        let nombre = document.getElementById("nombreCliente").value;
+        let correo = document.getElementById("CorreoUser").value;
+        let telefono = document.getElementById("telefono").value;
+        let comentario = document.getElementById("comentario").value;
+    if (!(/^([A-Z][a-z]+)(\s[A-Z][a-z]+)*$/.test(nombre))) {
+        Swal.fire({
+            title: "Error",
+            text: "Su nombre debe empezar con mayusculas y el resto ser con minusculas :D",
+            icon: "error"
+        });
+        return;
+    }
+    if (!(/\S+@\S+\.\S+/.test(correo))) {
+        Swal.fire({
+            title: "Error",
+            text: "Correo electrónico no válido",
+            icon: "error"
+        });
+        return;
+    }
+    if (!(/^[0-9]+$/.test(telefono))) {
+        Swal.fire({
+            title: "Error",
+            text: "El teléfono debe contener solo números",
+            icon: "error"
+        });
+        return;
+    }
+    if (comentario.trim() === "") {
+        Swal.fire({
+            title: "Error",
+            text: "Comentario no puede ser espacio",
+            icon: "error"
+        });
+        return;
+    }
+    Swal.fire({
+        title: "¡Enviado!",
+        text: "Su consulta fue enviada correctamente",
+        icon: "success"
+    }).then(() => {
+        formulario.submit();
+    });
+});
+</script>
+</body>
+
+</html>

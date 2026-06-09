@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--Barra de navegacion--> <!---->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+
+            <img src="icono2.jpg" alt="Logo Artemis" width="60" height="60">
+            <div class="navbar-brand">Artemis Store</div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">
+                            <i class="fa-solid fa-house"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Historia">
+                            <i class="fa-solid fa-heart"></i> Nuestra Historia
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Productos">
+                            <i class="fa-solid fa-store"></i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="abrirCarrito">
+                            <i class="fa-solid fa-cart-shopping"></i> Carrito
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html" target="_blank">
+                            <i class="fa-solid fa-user"></i> Iniciar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Hero/Pagina principal-->
+    <section id="home">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- TEXTO -->
+
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0 hero-texto">
+                    <h1>Viste tu esencia</h1>
+                    <h3>
+                        <i>Un universo de oportunidades esperando por ti.</i>
+                    </h3>
+                    <a href="#Productos"><button class="btn-hero" >Explorar colección</button></a>
+
+                </div>
+                
+                <!-- IMAGEN -->
+
+                <div class="col-lg-6 hero-imagen">
+                    <div class="marco-imagen">
+                        <img src="https://i.blogs.es/1e4512/bershka-hack-denim-3-1-/450_1000.jpeg" alt="Moda Artemis">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!--historia de la pagina-->
+    <section id="Historia">
+
+        <h2>Nuestra Historia</h2>
+        <p>
+            ¡Bienvenid@ a Artemis Store! Estilo, identidad y confianza en un solo lugar.
+            Fundada el año 2026 por Mayta Bautista Maciel Celeste, Enriquez Flores Madeleine
+            Aylin y Ever Javier Quispe Chuquimia.
+        </p>
+        <p>
+            Artemis nace de la idea de jóvenes bolivianos que buscan demostrar que el estilo
+            no tiene límites ni etiquetas. Moda para todos, accesible y auténtica,
+            acompañándote en cada etapa de tu vida.
+        </p>
+    </section>
+
+
+    <!--Coleccion-->
+    <!--Filtro de busqueda-->
+    <section class="filtros">
+        <h3>Filtrar por categoría</h3>
+        <div class="botones-filtro">
+            <a href="#" onclick="filtrar('mujer')">Mujer</a>
+            <a href="#" onclick="filtrar('hombre')">Hombre</a>
+            <a href="#" onclick="filtrar('niño')">Niños</a>
+            <a href="#" onclick="filtrar('acces')">Accesorios</a>
+            <a href="#" onclick="filtrar('popular')">Popular</a>
+        </div>
+    </section>
+
+
+    <!--Espacio para las cards-->
+
+    <section id="Productos">
+        
+        <!--recordar que la card debe contener <div class="card (categoria)"> para que funcione el buscador y <button onclick="agregarCarrito('prenda',precio)">Comprar</button>-->
+        <!--Mujeres-->
+        <div class="card mujer">
+            <img src="https://i.pinimg.com/1200x/68/ef/58/68ef58ea49234050b66833953bec0a72.jpg" class="card-img-top" alt="..."width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Blusa Floreada</h5>
+                <p class="card-text">Blusa con detalles floreados en el torso</p>
+                <p class="card-text">Precio: $50</p>
+                <button onclick="agregarCarrito('blusa floreada',50)">Comprar</button>
+            </div>
+        </div>
+        
+        <div class="card mujer popular" >
+            <img src="https://i.pinimg.com/736x/83/71/ae/8371aedeba819a14f347e55c2a894b49.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Blusa Luna y Sol</h5>
+                <p class="card-text">Blusa verde con detalles de luna y sol</p>
+                <p class="card-text">Precio: $50</p>
+                <button onclick="agregarCarrito('blusa luna y sol',50)">Comprar</button>
+            </div>
+        </div>
+        
+
+        <div class="card mujer">
+            <img src="https://i.pinimg.com/736x/f3/66/dd/f366dd4e92522f53be3d0630043031d9.jpg" class="card-img-top" alt="..."width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Falda estrellas</h5>
+                <p class="card-text">Falda con detalle inferior de estrellas</p>
+                <p class="card-text">Precio: $85</p>
+                <button onclick="agregarCarrito('falda estrellas',85)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card mujer">
+            <img src="https://i.pinimg.com/736x/36/4a/67/364a67bfcbf5a58fcdc4ac0fa6e9dc04.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Vestido estampado floreado</h5>
+                <p class="card-text">Vestido con estampado floreado y mangas abombadas</p>
+                <p class="card-text">Precio: $100</p>
+                <button onclick="agregarCarrito('vestido estampado floreado',100)">Comprar</button>
+            </div>
+        </div>
+        <!--Hombres-->
+        <div class="card hombre popular">
+            <img src="https://i.pinimg.com/736x/f1/8b/8e/f18b8ee40b1bb1f988127431e4e2ca25.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Polera negra de luna</h5>
+                <p class="card-text">Polera negra con estampado de luna, manga corta.</p>
+                <p class="card-text">Precio: $50</p>
+                <button onclick="agregarCarrito('polera negra luna',50)">Comprar</button>
+            </div>
+        </div>
+        
+        <div class="card hombre">
+            <img src="https://i.pinimg.com/736x/d6/99/50/d69950331fe78032520c5086be05df0d.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Camisa gris con estampade de ojos</h5>
+                <p class="card-text">Camisa gris con botones negros y estampados de ojos.</p>
+                <p class="card-text">Precio: $60</p>
+                <button onclick="agregarCarrito('camisa gris estampado de ojos',60)">Comprar</button>
+            </div>
+        </div>
+    
+        <div class="card hombre">
+            <img src="https://i.pinimg.com/736x/cb/2b/74/cb2b742262cb287e07af5c5682429418.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Pantalon gris cargo</h5>
+                <p class="card-text">Pantalos gris claro estilo cargo.</p>
+                <p class="card-text">Precio: $70</p>
+                <button onclick="agregarCarrito('pantalon cargo gris',70)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card hombre">
+            <img src="https://i.etsystatic.com/62389109/r/il/840b63/7558579508/il_fullxfull.7558579508_msrr.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Polera blanca con diseño de letras</h5>
+                <p class="card-text">Polera con diseño de fima.</p>
+                <p class="card-text">Precio: $60</p>
+                <button onclick="agregarCarrito('polera blanca con estampado de firma',60)">Comprar</button>
+            </div>
+        </div>
+        <!--Niño-->
+        <div class="card niño">
+            <img src="https://i.pinimg.com/736x/3b/20/77/3b207701d456bc09ab3864761bb7d687.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">vestidito gris</h5>
+                <p class="card-text">Vestidito gris con cuello blanco</p>
+                <p class="card-text">Precio: $60</p>
+                <button onclick="agregarCarrito('vestidito gris',60)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card niño popular">
+            <img src="https://i.pinimg.com/736x/19/ef/4e/19ef4e61ea876e467e0bb33a69560785.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Saconcito</h5>
+                <p class="card-text">Saconcito rosa claro, calido para invierno, con frisa interior.</p>
+                <p class="card-text">Precio: $70</p>
+                <button onclick="agregarCarrito('Saconcito rosa',70)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card niño">
+            <img src="https://i.pinimg.com/736x/84/b4/58/84b458d05ad1727a36097834600feaa1.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Pijamita de estrelas</h5>
+                <p class="card-text">Pijama para niños gris con estampado de estrellas.</p>
+                <p class="card-text">Precio: $80</p>
+                <button onclick="agregarCarrito('pijamita de estrellas',80)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card niño" >
+            <img src="https://i.pinimg.com/1200x/15/5c/95/155c956430aab4387885b7543a1c3a16.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Conjuntito gris para nilños</h5>
+                <p class="card-text">Conjuntito gris deportivo para niños </p>
+                <p class="card-text">Precio: $70</p>
+                <button onclick="agregarCarrito('conjuntito',70)">Comprar</button>
+            </div>
+        </div>
+
+        <!--Accesorios-->
+        <div class="card acces">
+            <img src="https://i.pinimg.com/1200x/ba/9f/0b/ba9f0bc692264dda6c6b98f5cc414765.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Brazaletes de estrellas</h5>
+                <p class="card-text">Brazaletes de estrellas de plata.</p>
+                <p class="card-text">Precio: $100</p>
+                <button onclick="agregarCarrito('brazalete de estrellas',100)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card acces popular">
+            <img src="https://i.pinimg.com/736x/ad/42/0e/ad420e0348ed83abb5ad925331a11283.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Anillo luna y sol</h5>
+                <p class="card-text">Anillo de luns y sol regulable en plata.</p>
+                <p class="card-text">Precio: $90</p>
+                <button onclick="agregarCarrito('anillo luna y sol',90)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card acces">
+            <img src="https://i.pinimg.com/736x/aa/05/9f/aa059f18ac5a03dc97b33a7538d0062e.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Aretes de estrella plateada</h5>
+                <p class="card-text">Aretes plateados con estrella y cadena, colgante en forma de estrella de cinco puntas.</p>
+                <p class="card-text">Precio: $80</p>
+                <button onclick="agregarCarrito('Aretes de estrella plateada',80)">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card acces">
+            <img src="https://i.pinimg.com/736x/c0/71/9a/c0719a277c81192f5935ba6498939d2d.jpg" class="card-img-top" alt="..." width="300px" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">Aretes saturno</h5>
+                <p class="card-text">Aretes con charm de saturno, largos, con cadena de estrellas.</p>
+                <p class="card-text">Precio: $80</p>
+                <button onclick="agregarCarrito('polera blanca con estampado de firma',80)">Comprar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Carrito de compras-->
+    <div class="carrito-panel" id="panelCarrito" hidden>
+
+        <h3>Mis compras</h3>
+        <hr>
+        <div id="carrito"></div>
+        <h4>Total: Bs <span id="total">0</span></h4>
+        <button id="formcomprar">Realizar la Compra</button>
+
+    </div>
+
+    <!--Formulario de compras-->
+    <div class="carrito-form" id="formcompra" hidden>
+    <form id="formucomprar">
+        <label>Ingresar tarjeta de credito:</label>
+        <input type="text" id="tarjeta" placeholder="*******">
+        <br><br>
+        <label>Ingresar direccion exacta:</label>
+        <input type="text" id="direc" placeholder="*******">
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+    </div>
+
+    <!--Footer-->
+
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="footer-izquierda">
+                <h5>Información</h5>
+                <a href="ayuda.html">Ayuda</a>
+                <a href="envios.html">Formulario de devoluciones</a>
+                <a href="contactanos.html">Contáctanos</a>
+            </div>
+
+            <div class="footer-centro">
+                <img src="icono2.jpg" alt="Logo Artemis">
+                <h5>Artemis Store</h5>
+                <p>
+                    Más que moda, una forma de expresar <br>
+                    tu esencia, tu autenticidad y tu estilo.
+                </p>
+            </div>
+
+            <div class="footer-derecha">
+                <h5>Nuestras Redes</h5>
+                <div class="redes-footer">
+                    <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">
+            &copy; Artemis Store. Todos los derechos reservados.
+        </p>
+
+    </footer>
+    <script src="javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de secion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 align="center">Artemis Store-Inicio de sesion</h1>
+    </header>
+    <form align="center" id="inicioSesion" name="inicio" method="POST" action="Cliente.php">
+        <label>Correo: </label>
+        <input type="email" id="email" placeholder="Ej: AnnaPerez@gmail.com" name="email" required>
+        <br><br>
+        <label>Contraseña:</label>
+        <input type="password" id="PasswordUser" required>
+        <br><br>
+        <button type="submit">Enviar</button>
+        <br><br>
+        <button type="reset">Cancelar</button>
+    </form>
+    <p align="center">¿No tienes una cuenta? <a href="crearcuenta.html" target="_blank">Crea una cuenta aqui</a></p><br>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const formulario = document.getElementById("inicioSesion");
+        formulario.addEventListener("submit", function(e) {
+        e.preventDefault();
+        let email = document.getElementById("email").value;
+        if (!(/\S+@\S+\.\S+/.test(email))) {
+        Swal.fire({
+            title: "Error en correo",
+            text: "Correo electrónico no válido",
+            icon: "error"
+        });
+        return;
+    }
+    Swal.fire({
+        title: "Correcto",
+        text: "Datos válidos",
+        icon: "success"
+    }).then(() => {
+        formulario.submit();
+    });
+});
+</script>
+</body>
+</html>
