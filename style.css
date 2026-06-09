@@ -633,4 +633,8 @@ p a:hover {
     .hero-imagen img {
         width: 100%;
     }
+
+    .card {
+    width: 100%;
+    }
 }
